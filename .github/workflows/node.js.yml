@@ -46,8 +46,16 @@ jobs:
           sudo rm -rf /var/www/ongc.rtms.foxboroinstrument/*
           sudo cp -r ~/work/OscarsBE/* /var/www/ongc.rtms.foxboroinstrument/
 
-          # Restart Nginx to apply changes
-          sudo systemctl restart nginx
+          # Start the Node.js application using PM2
+          # Check if the app is already running; if not, start it
+          if pm2 list | grep -q 'ongc-rtms-backend'; then
+            pm2 restart ongc-rtms-backend
+          else
+            pm2 start /var/www/ongc.rtms.foxboroinstrument/index.js --name ongc-rtms-backend # Adjust to your entry point file
+          fi
+
+          # Save PM2 process list and configuration
+          pm2 save
 
           # Cleanup: Remove the ~/work/OscarsBE directory after deployment
           cd ~
