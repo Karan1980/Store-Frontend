@@ -39,6 +39,12 @@ jobs:
             git clone https://github.com/Karan1980/RTMS-Backend.git .
           fi
 
+          # Install PM2 globally if not already installed
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 not found. Installing PM2..."
+            sudo npm install -g pm2
+          fi
+          
           # Install dependencies and build the project
           npm install
 
