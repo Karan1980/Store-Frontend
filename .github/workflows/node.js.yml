@@ -44,7 +44,7 @@ jobs:
 
           # Deploy the build to /var/www/ongc.rtms.foxboroinstrument/*
           sudo rm -rf /var/www/ongc.rtms.foxboroinstrument/*
-          sudo cp -r dist/* /var/www/ongc.rtms.foxboroinstrument/
+          sudo cp -r ~/work/OscarsBE/* /var/www/ongc.rtms.foxboroinstrument/
 
           # Restart Nginx to apply changes
           sudo systemctl restart nginx
