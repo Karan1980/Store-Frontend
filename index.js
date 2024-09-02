@@ -4,7 +4,7 @@ const app = Express();
 const PORT = 5000;
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/kavya', (req, res) => {
     res.json({status: 'Successfull'})
 })
 
