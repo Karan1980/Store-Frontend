@@ -5,7 +5,7 @@ const PORT = 5000;
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.json({status: 'Successfull',statusCode:200})
+    res.json({status: 'successfull'})
 })
 
 app.listen(PORT, () => {
