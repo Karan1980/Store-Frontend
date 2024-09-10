@@ -36,7 +36,7 @@ jobs:
           if [ -d ".git" ]; then
             git pull origin master
           else
-            git clone git@github.com:Karan1980/Store-Frontend.git .
+            git clone https://github.com/Karan1980/Store-Frontend.git .
           fi
 
           # Install PM2 globally if not already installed
